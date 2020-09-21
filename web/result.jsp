@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -32,7 +33,16 @@
 
     <div id = "menu">
         <div>
+            <table id = "answer">
+                <tr id='bold'>
+                    <td class = "col1">X</td>
+                    <td class = "col2">Y</td>
+                    <td class = "col3">R</td>
+                    <td class = "col4">Результат</td>
+                </tr>
+            </table>
             <jsp:include page="incl/table.jsp" />
+
         </div>
     </div>
 </div>

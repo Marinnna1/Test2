@@ -1,4 +1,3 @@
-<%@ page import="java.util.UUID" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -9,13 +8,13 @@
 	<link rel="icon" href="images/favicon.jpg" type="img/jpg">
  </head>
  <body>
- 
+
   <div id = "container">
-  
+
 	<header>
         <div class = "header1"><img src = 'https://cdn.betterttv.net/emote/55a63293b13ce179110b0193/2x'>Лабораторная работа №2 по Веб-программированию<img src='https://cdn.betterttv.net/emote/5bc2143ea5351f40921080ee/2x' ></div>
         <div class = "header2">Вариант №2225</div>
-        <div class = "header3">Студентка: Краюхина Марина Юрьевна</div>
+        <div class = "header3">Студенты: Краюхина Марина</div>
         <div class = "header4">Группа: <span class="P3111"> P3211</span></div>
 	</header>
 
@@ -23,7 +22,7 @@
          <%@ include file="incl/graphic.html" %>
      </div>
 
-	<div id = "menu"> 
+	<div id = "menu">
 	    <form id = "coord" method="GET" action = "controllerServlet" onsubmit = "return valid()">
 		    <p> Значение Х:
 			    <div class="x">
@@ -39,12 +38,12 @@
 			   <input type="button" name="x" value="5" class="xButton" onclick="xButtonsValidate(this)">
 			  </div>
             </p>
-			 
-			<p class = "forY"> 
+
+			<p class = "forY">
 			   <label for="textfieldY">Значение Y ∈ (-3;5):</label>
-               <input type="text" id="textfieldY" autocomplete="off" name="y" maxlength = "7" placeholder = "Введите значение Y"> 
+               <input type="text" id="textfieldY" autocomplete="off" name="y" maxlength = "7" placeholder = "Введите значение Y">
             </p>
-			
+
 			<p> Значение R:
 			 <div class="r">
                <input type="hidden" name="r" value=" " id="rHiddenButton">
@@ -62,8 +61,7 @@
                <input type="submit" value="Отправить">
             </p>
 
-            <input type="hidden" name="unique" value="<%= UUID.randomUUID().toString()%>">
-			
+
             <div id="error"></div>
 
 		</form>

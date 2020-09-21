@@ -1,19 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: marus
-  Date: 21.09.2020
-  Time: 21:36
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" %>
-<div>
-        <table id = "answer">
-            <tr id='bold'>
-                <td class = "col1">X</td>
-                <td class = "col2">Y</td>
-                <td class = "col3">R</td>
-                <td class = "col4">Результат</td>
-            </tr>
-        </table>
-</div>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="models.Dot" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+
+<% ArrayList<Dot> history = (ArrayList<Dot>)session.getAttribute("history");%>
+
+<c:forEach var="dot" items="${history}">
+    <tr >
+        <td ><c:out value="${dot.getX()}"/></td>
+        <td ><c:out value="${dot.getY()}"/></td>
+        <td ><c:out value="${dot.getR()}"/></td>
+        <td ><c:out value="${dot.getResult()}"/></td>
+    </tr>
+
+</c:forEach>
 
