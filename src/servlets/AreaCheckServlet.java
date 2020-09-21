@@ -11,10 +11,10 @@ import java.io.PrintWriter;
 public class AreaCheckServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-        double x = Double.parseDouble(req.getParameter("x"));
-        double y = Double.parseDouble(req.getParameter("y"));
-        double r = Double.parseDouble(req.getParameter("r"));
-        RequestDispatcher dispatcher = req.getRequestDispatcher("result.jsp");
-        dispatcher.forward(req, resp);
+        String x = req.getParameter("x");
+        String y = req.getParameter("y");
+        String r = req.getParameter("r");
+       RequestDispatcher dispatcher = req.getRequestDispatcher("result.jsp");
+       dispatcher.forward(req, resp);
     }
 }

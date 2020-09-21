@@ -32,17 +32,7 @@
 
     <div id = "menu">
         <div>
-            <table id = "answer">
-                <tr id='bold'>
-                    <td class = "col1">X</td>
-                    <td class = "col2">Y</td>
-                    <td class = "col3">R</td>
-                    <td class = "col4">Ответ</td>
-                    <td class = "col5">Время</td>
-                    <td class = "col6">Время работы скрипта (в мс)</td>
-                </tr>
-
-            </table>
+            <jsp:include page="incl/table.jsp" />
         </div>
     </div>
 </div>
