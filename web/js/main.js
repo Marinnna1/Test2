@@ -3,6 +3,7 @@ var x;
 
 function rButtonsValidate(input) {
 	r = input.getAttribute('value');
+	changeR(r);
 	let buttons = document.getElementsByClassName("rButton");
 	
 	let hiddenInput = document.getElementById("rHiddenButton");
@@ -59,14 +60,14 @@ function xButtonsValidate(input) {
         let y = parseFloat($('#textfieldY').val().replace(",", "."));
 		$('#error').text("");
       
-    //    if (isNaN(y) || y <= -3 || y >= 5) {
-     //       $('#error').text("Значение Y должно быть в диапазоне (-3;5)");
-	//	    $("#textfieldY").css("background-color", "red");
-    //        return false;
-   //   }
-	//	else{
-	//	    $("#textfieldY").css("background-color", "");
-	//	}
+        if (isNaN(y) || y <= -3 || y >= 5) {
+        	$('#error').text("Значение Y должно быть в диапазоне (-3;5)");
+	        $("#textfieldY").css("background-color", "red");
+            return false;
+      }
+		else{
+		    $("#textfieldY").css("background-color", "");
+		}
 		
 		if (isNaN(x)) {
             $('#error').text("Укажите значение X");

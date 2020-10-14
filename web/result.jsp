@@ -1,4 +1,4 @@
-
+<%@ page import="models.Dot" %>
 <%@ page contentType="text/html;charset=utf-8" %>
 
 <html>
@@ -21,18 +21,49 @@
     <header>
         <div class = "header1"><img src = 'https://cdn.betterttv.net/emote/55a63293b13ce179110b0193/2x'>Лабораторная работа №2 по Веб-программированию<img src='https://cdn.betterttv.net/emote/5bc2143ea5351f40921080ee/2x' ></div>
         <div class = "header2">Вариант №2225</div>
-        <div class = "header3">Студентка: Краюхина Марина Юрьевна</div>
+        <div class = "header3">Студенты: Краюхина Марина, Таскаев Артур</div>
         <div class = "header4">Группа: <span class="P3111"> P3211</span></div>
     </header>
 
     <div>
         <%@ include file="incl/graphic.html" %>
+        <% Dot dot = (Dot) session.getAttribute("currentDot");
+          double x = Integer.parseInt(dot.getX())*90/Integer.parseInt(dot.getR())+125;
+          double y = 125 - Double.parseDouble(dot.getY()) * 90 / Integer.parseInt(dot.getR());
+          String color = dot.getColor();
+            System.out.println(color);
+        %>
+        <circle id="point" r="3" cx="<%=x%>" cy="<%=y%>" fill="<%=color%>" stroke="<%=color%>"/>
+        </swg>
     </div>
 
-    <a href="index.jsp">Страница с формой</a>
+    <div>
+        <a href="index.jsp">Страница с формой</a>
+    </div>
+    <%Dot currentDot = (Dot)session.getAttribute("currentDot"); %>
+    <div class="currentTable">
+        Текущие значения:
+    </div>
 
+    <table id="currentAnswer">
+        <tr>
+            <th>X</th> <td>${currentDot.getX()}</td>
+        </tr>
+        <tr>
+            <th>Y</th> <td>${currentDot.getY()}</td>
+        </tr>
+        <tr>
+            <th>R</th> <td id="currentR">${currentDot.getR()}</td>
+        </tr>
+        <tr>
+            <th>Результат:</th> <td>${currentDot.getResult()}</td>
+        </tr>
+    </table>
     <div id = "menu">
         <div>
+            <div class="currentTable">
+                История:
+            </div>
             <table id = "answer">
                 <tr id='bold'>
                     <td class = "col1">X</td>
@@ -40,8 +71,8 @@
                     <td class = "col3">R</td>
                     <td class = "col4">Результат</td>
                 </tr>
+                <jsp:include page="incl/table.jsp" />
             </table>
-            <jsp:include page="incl/table.jsp" />
 
         </div>
     </div>

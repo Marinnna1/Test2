@@ -20,11 +20,12 @@
         <url-pattern>/areaCheckServlet</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>SessionServlet</servlet-name>
-        <servlet-class>servlets.SessionServlet</servlet-class>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet-mapping>
-        <servlet-name>SessionServlet</servlet-name>
-        <url-pattern>/session</url-pattern>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 </web-app>
